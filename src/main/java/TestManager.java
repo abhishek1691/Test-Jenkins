@@ -7,5 +7,6 @@ public class TestManager {
     {
         System.out.println("HI jenkin!!");
         System.out.println("This is abhishek test");
+        System.out.println("This commit send message to abhishek.s@fretron.com");
     }
 }
