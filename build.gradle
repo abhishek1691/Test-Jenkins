@@ -3,6 +3,19 @@ version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
 
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Implementation-Title': 'TestJenkin',
+                'Implementation-Version': version,
+                'Main-Class': 'TestManager'
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+    exclude ('META-INF/*.RSA', 'META-INF/*.SF','META-INF/*.DSA')
+
+}
+
 sourceCompatibility = 1.8
 
 repositories {
