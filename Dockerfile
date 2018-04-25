@@ -11,10 +11,8 @@ RUN apk upgrade --update && \
 
 ENV JAVA_OPTS -Xms256m -Xmx1024m
 
-EXPOSE 2127
-
 COPY ./build/libs/TestJenkin-all-1.0-SNAPSHOT.jar /TestJenkin.jar
 
 WORKDIR /
 
-ENTRYPOINT ["java","-jar","TestJenkin.jar","service_url.prod.xml","common.xml","prod.xml"]
+ENTRYPOINT ["java","-jar","TestJenkin.jar"]
