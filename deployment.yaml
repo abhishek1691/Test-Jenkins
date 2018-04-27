@@ -1,24 +1,24 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: dahboard-manager
+  name: test-jenkins
   namespace : streams
 
 spec:
   type: NodePort
   selector:
-    app: dahboard-manager
+    app: test-jenkins
   ports:
   - protocol: TCP
     name : proto1
-    port: 2127
+    port: 2128
 
 ---
 
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: dahboard-manager
+  name: test-jenkins
   namespace : streams
   labels:
       keel.sh/policy: force
@@ -28,10 +28,10 @@ spec:
   template: # create pods using pod definition in this template
     metadata:
       labels:
-        app: dahboard-manager
+        app: test-jenkins
     spec:
       containers:
-      - name: dahboard-manager
-        image: gcr.io/fretron-server/dashboard-manager-test:latest
+      - name: test-jenkins
+        image: docker.io/abhishek1691/production-server:latest
         ports:
-        - containerPort: 2127
+        - containerPort: 2128
