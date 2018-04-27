@@ -1,34 +1,34 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: test-jenkins
+  name: dahboard-manager
   namespace : streams
   annotations:
     getambassador.io/config: |
       ---
       apiVersion: ambassador/v0
-      kind:  Deployment
-      name:  test-jenkins
-      prefix: /testjenkins/
-      service: test-jenkins.streams:2127
-      rewrite: /enkintestjenkins/
+      kind:  Mapping
+      name:  dashboard-manager
+      prefix: /dashboard/
+      service: dashboard-manager.streams:2127
+      rewrite: /dashboard/
 spec:
   type: NodePort
   selector:
-    app: test-jenkins
+    app: dahboard-manager
   ports:
   - protocol: TCP
     name : proto1
-    port: 2128
+    port: 2127
 
 ---
 
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: test-jenkins
+  name: dahboard-manager
   namespace : streams
-  labels: 
+  labels:
       keel.sh/policy: force
       keel.sh/approvals: "1"
 spec:
@@ -36,10 +36,10 @@ spec:
   template: # create pods using pod definition in this template
     metadata:
       labels:
-        app: test-jenkins
+        app: dahboard-manager
     spec:
       containers:
-      - name: test-jenkins
-        image: docker.io/abhishek1691/production-server:latest
+      - name: dahboard-manager
+        image: gcr.io/fretron-server/dashboard-manager-test:latest
         ports:
-        - containerPort: 2128
+        - containerPort: 2127
