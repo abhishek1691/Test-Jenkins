@@ -7,7 +7,7 @@ metadata:
     getambassador.io/config: |
       ---
       apiVersion: ambassador/v0
-      kind:  Mapping
+      kind:  Deployment
       name:  test-jenkins
       prefix: /testjenkins/
       service: test-jenkins.streams:2127
