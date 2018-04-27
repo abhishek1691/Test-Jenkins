@@ -5,7 +5,7 @@ public class TestManager {
 
     public static void main(String ... args)
     {
-        System.out.println("Hello jenkins!! with gradle");
+        System.out.println("Hello kube!! I am from jenkins");
     }
 
     public static String reverse(String word)

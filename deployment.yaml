@@ -32,6 +32,6 @@ spec:
     spec:
       containers:
       - name: test-jenkins
-        image: docker.io/abhishek1691/production-server:latest
+        image: docker.io/abhishek1691/production-server:{$version}
         ports:
         - containerPort: 2128
