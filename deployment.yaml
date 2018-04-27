@@ -3,15 +3,7 @@ apiVersion: v1
 metadata:
   name: dahboard-manager
   namespace : streams
-  annotations:
-    getambassador.io/config: |
-      ---
-      apiVersion: ambassador/v0
-      kind:  Mapping
-      name:  dashboard-manager
-      prefix: /dashboard/
-      service: dashboard-manager.streams:2127
-      rewrite: /dashboard/
+
 spec:
   type: NodePort
   selector:
