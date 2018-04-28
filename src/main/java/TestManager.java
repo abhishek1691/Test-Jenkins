@@ -3,9 +3,9 @@
  */
 public class TestManager {
 
-    public static void main(String ... args)
-    {
+    public static void main(String ... args) throws InterruptedException {
         System.out.println("Hello kube!! I am from jenkins");
+        Thread.sleep(10000);
     }
 
     public static String reverse(String word)
