@@ -5,10 +5,10 @@ import org.junit.Test;
  */
 public class TestCase1 {
     @Test
-    public void testManager()
+    public boolean start()
     {
        String result= TestManager.reverse("This is my first program");
-        assert  isValid(result);
+       return isValid(result);
     }
 
     private boolean isValid(String result) {
