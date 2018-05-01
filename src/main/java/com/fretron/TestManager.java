@@ -1,3 +1,5 @@
+package com.fretron;
+
 /**
  * Created by anurag on 23-Apr-18.
  */
@@ -5,7 +7,6 @@ public class TestManager {
 
     public static void main(String ... args) throws InterruptedException {
         System.out.println("Hello kube!! I am from jenkins with thread");
-        Thread.sleep(100000);
         System.out.println("Now done!!");
     }
 

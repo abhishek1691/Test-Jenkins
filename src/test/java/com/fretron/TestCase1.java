@@ -1,9 +1,13 @@
+package com.fretron;
+
 import org.junit.Test;
 
 /**
  * Created by anurag on 23-Apr-18.
  */
 public class TestCase1 {
+
+
     @Test
     public boolean start()
     {
