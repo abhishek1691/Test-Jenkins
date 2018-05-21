@@ -1,0 +1,19 @@
+---
+
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: Test-Jenkins
+  namespace : default
+spec:
+  replicas: 1 # tells deployment to run 2 pods matching the template
+  template: # create pods using pod definition in this template
+    metadata:
+      labels:
+        app: Test-Jenkins
+    spec:
+      containers:
+      - name: Test-Jenkins
+image: docker.com/abhishek1691/test:$version
+        ports:
+- containerPort: 2127

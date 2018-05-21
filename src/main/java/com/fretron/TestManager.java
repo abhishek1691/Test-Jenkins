@@ -7,6 +7,7 @@ public class TestManager {
 
     public static void main(String ... args) throws InterruptedException {
         System.out.println("Hello kube!! I am from jenkins with thread");
+        Thread.currentThread().join();
         System.out.println("Now done!!");
     }
 
