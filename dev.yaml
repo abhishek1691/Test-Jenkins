@@ -1,6 +1,6 @@
 ---
 
-apiVersion: apps/v1beta1
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: Test-Jenkins
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: Test-Jenkins
+      imagePullPolicy: Always
   image: docker.io/abhishek1691/test:latest
-imagePullPolicy: Always
         ports:
-- containerPort: 2127
+- containerPort: 80
