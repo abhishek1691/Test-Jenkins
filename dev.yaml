@@ -1,20 +1,21 @@
----
-
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: Test-Jenkins
-  namespace : default
+  name: fretron-jenkins
+  namespace : streams
+  labels:
+      keel.sh/policy: force
+      keel.sh/approvals: "1"
 spec:
   replicas: 1 # tells deployment to run 2 pods matching the template
   template: # create pods using pod definition in this template
     metadata:
       labels:
-        app: Test-Jenkins
+        app: fretron-jenkins
     spec:
       containers:
-      - name: Test-Jenkins
-      imagePullPolicy: Always
-  image: docker.io/abhishek1691/test:latest
+      - name: fretron-jenkins
+        image: docker.io/abhishek1691/test:latest
+        imagePullPolicy: Always
         ports:
-- containerPort: 80
+        - containerPort: 2128
