@@ -6,7 +6,7 @@ package com.fretron;
 public class TestManager {
 
     public static void main(String ... args) throws InterruptedException {
-        System.out.println("Hello kube!! Using SHA");
+        System.out.println("Hello kube!! Using SHA test -2 ");
         Thread.currentThread().join();
         System.out.println("Now done!!");
     }
