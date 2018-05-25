@@ -15,4 +15,4 @@ spec:
     spec:
       containers:
       - name: fretron-jenkins
-        image: http://localhost:5000/test:latest
+        image: localhost:5000/test:latest
