@@ -15,4 +15,4 @@ spec:
     spec:
       containers:
       - name: fretron-jenkins
-        image: docker.io/abhishek1691/test@$SHA
+        image: http://localhost:5000/test:latest
