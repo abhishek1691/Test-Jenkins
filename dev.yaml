@@ -15,4 +15,4 @@ spec:
     spec:
       containers:
       - name: fretron-jenkins
-        image: myhost.com/test:latest
+        image: fretron-server.com/test:latest
