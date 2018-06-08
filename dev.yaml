@@ -16,3 +16,16 @@ spec:
       containers:
       - name: fretron-jenkins
         image: 192.168.0.153:5000/test@$SHA
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: fretron-jenkins
+spec:
+  selector:
+    app: fretron-jenkins
+  ports:
+  - protocol: TCP
+    port: 5555
