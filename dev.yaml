@@ -23,6 +23,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: fretron-jenkins
+  namespace : streams
 spec:
   selector:
     app: fretron-jenkins
