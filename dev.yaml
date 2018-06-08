@@ -16,15 +16,12 @@ spec:
       containers:
       - name: fretron-jenkins
         image: 192.168.0.153:5000/test@$SHA
-
 ---
-
 kind: Service
 apiVersion: v1
 metadata:
   name: fretron-jenkins
   namespace : streams
-
 spec:
   type: NodePort
   selector:
@@ -33,19 +30,17 @@ spec:
   - protocol: TCP
     name : proto1
     port: 5555
-
-   ---
-
-   apiVersion: extensions/v1beta1
-   kind: Ingress
-   metadata:
-     name: test-ingress
-   spec:
-     rules:
-     - host: localhost
-        http:
-         paths:
-         - path: /test
-           backend:
-             serviceName: fretron-jenkins.streams
-             servicePort:  5555
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: test
+spec:
+  rules:
+  - host: localhost
+    http:
+      paths:
+      - path: /test
+        backend:
+          serviceName: fretron-jenkins.streams
+          servicePort: 5555
