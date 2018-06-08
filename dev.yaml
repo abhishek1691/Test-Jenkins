@@ -44,4 +44,4 @@ spec:
       - path: /test
         backend:
           serviceName: fretron-jenkins
-          servicePort: 5555
+          servicePort: 32681
