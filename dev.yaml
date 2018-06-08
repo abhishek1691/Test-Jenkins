@@ -35,9 +35,10 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: fretron-jenkins
+  namespace : streams
 spec:
   rules:
-  - host: localhost
+  - host: com.example
     http:
       paths:
       - path: /test
