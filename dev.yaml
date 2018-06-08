@@ -34,7 +34,7 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: test
+  name: fretron-jenkins
 spec:
   rules:
   - host: localhost
@@ -42,5 +42,5 @@ spec:
       paths:
       - path: /test
         backend:
-          serviceName: fretron-jenkins.streams
+          serviceName: fretron-jenkins
           servicePort: 5555
