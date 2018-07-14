@@ -18,6 +18,6 @@ public class Resources {
     @Produces(MediaType.TEXT_PLAIN)
     public String getServiceStatus()
     {
-        return "i am ok test ok";
+        return "i am ok test ok finfal";
     }
 }
