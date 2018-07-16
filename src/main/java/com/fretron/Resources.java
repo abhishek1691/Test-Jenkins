@@ -14,7 +14,7 @@ import javax.ws.rs.core.MediaType;
 public class Resources {
 
     @GET
-    @Path("/status")
+    @Path("/statu")
     @Produces(MediaType.TEXT_PLAIN)
     public String getServiceStatus()
     {
