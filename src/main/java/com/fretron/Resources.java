@@ -8,16 +8,16 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 /**
- * Created by anurag on 23-Apr-18.
+ * Created by anurag on 23-Apr-1
  */
 @Path("/test")
 public class Resources {
 
     @GET
-    @Path("/status")
+    @Path("/statu")
     @Produces(MediaType.TEXT_PLAIN)
     public String getServiceStatus()
     {
-        return "i am ok";
+        return "i amk";
     }
 }
