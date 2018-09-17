@@ -2,7 +2,6 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: fretron-jenkins
-  namespace : streams
   labels:
       keel.sh/policy: force
       keel.sh/approvals: "1"
@@ -15,13 +14,12 @@ spec:
     spec:
       containers:
       - name: fretron-jenkins
-        image: 192.168.0.153:5000/test@$SHA
+        image: abhishek1691/test@sha256:54a81b35c9d62f87fce2330df9db5b00e24d03f91caea371a91cf1f5fc5857db
 ---
 kind: Service
 apiVersion: v1
 metadata:
   name: fretron-jenkins
-  namespace : streams
 spec:
   type: NodePort
   selector:
@@ -35,13 +33,12 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: fretron-jenkins
-  namespace : streams
 spec:
   rules:
-  - host: com.example
+  - host: mytesthost.com
     http:
       paths:
       - path: /test
         backend:
           serviceName: fretron-jenkins
-          servicePort: 32681
+          servicePort: 5555
