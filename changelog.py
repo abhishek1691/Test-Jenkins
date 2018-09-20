@@ -32,10 +32,10 @@ if __name__ == "__main__":
     # check that the repository loaded correctly
     if not repo.bare:
         print('Repo at {} successfully loaded.'.format(repo_path))
-        alpha = repo.branches['alpha']
+        alpha = repo.branches['original/alpha']
         current = repo.active_branch
         print("active brance name::" + current.name)
-        repo.git.merge(alpha)
+        # repo.git.merge(alpha)
         # base = repo.merge_base(current, alpha)
         # repo.index.merge_tree(current, base=base)
         # repo.index.commit('Merge alpha into beta-final test ho gaya2',parent_commits=(current.commit, alpha.commit))
@@ -47,8 +47,8 @@ if __name__ == "__main__":
         endDate = now.date()
         print("startDate::"+ str(startDate))
         print("endDate::"+str(endDate))
-        commits = list(repo.iter_commits(repo.active_branch.name))[:60]
-        file=open('commit.md', 'w')
+        commits = list(repo.iter_commits(alpha.name))[:60]
+        file=open('changelog.md', 'w')
         for commit in commits:
 
             if(str(endDate) in str(commit.authored_datetime) or (str(startDate) in str(commit.authored_datetime))) :
@@ -64,3 +64,4 @@ if __name__ == "__main__":
     else:
         print('Could not load repository at {} :('.format(repo_path))
         file.close() 
+
