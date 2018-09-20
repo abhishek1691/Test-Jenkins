@@ -32,7 +32,7 @@ if __name__ == "__main__":
     # check that the repository loaded correctly
     if not repo.bare:
         print('Repo at {} successfully loaded.'.format(repo_path))
-        alpha = repo.branches['origin/alpha']
+        alpha = repo.branches['alpha']
         current = repo.active_branch
         print("active brance name::" + current.name)
         # repo.git.merge(alpha)
